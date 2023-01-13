@@ -1,0 +1,27 @@
+{
+  "name": "mugstech-types",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "version": "0.0.0",
+  "description": "Types for mugstech libraries",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup": "rimraf lib || true",
+    "build": "npm run cleanup && tsc -p tsconfig.build.json --declaration",
+    "prepare": "npm run cleanup && npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [
+    "mugstech"
+  ],
+  "author": "Liberty Mugwara",
+  "license": "ISC",
+  "dependencies": {
+    "rimraf": "^3.0.2",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
