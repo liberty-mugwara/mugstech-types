@@ -17,57 +17,12 @@ export interface IBulkOperationQueryEvent {
   operationType: "query";
 }
 
-export interface IGetBulkOperationDataEventJSON {
-  extension: "JSON"[];
-  jsonDataFormatFn: TJSONFormatFnNames;
-  jsonType: "ARRAY" | "OBJECT";
-}
-
-export interface IGetBulkOperationDataEventCSV {
-  extension: "CSV"[];
-  csvDataFormatFn: TCSVFormatFnNames;
-}
-
-export interface IGetBulkOperationDataEventJSONL {
-  extension: "JSONL"[];
-}
-
-export interface IGetBulkOperationDataEventJSONandCSV {
-  extension: ("JSON" | "CSV")[];
-  jsonDataFormatFn: TJSONFormatFnNames;
-  jsonType: "ARRAY" | "OBJECT";
-  csvDataFormatFn: TCSVFormatFnNames;
-}
-
-export interface IGetBulkOperationDataEventJSONandJSONL {
-  extension: ("JSON" | "JSONL")[];
-  jsonDataFormatFn: TJSONFormatFnNames;
-  jsonType: "ARRAY" | "OBJECT";
-  csvDataFormatFn: TCSVFormatFnNames;
-}
-
-export interface IGetBulkOperationDataEventCSVandJSONL {
-  extension: ("CSV" | "JSONL")[];
-  csvDataFormatFn: TCSVFormatFnNames;
-}
-
-export interface IGetBulkOperationDataEventALL {
-  extension: ("JSON" | "JSONL" | "CSV")[];
-  jsonDataFormatFn: TJSONFormatFnNames;
-  jsonType: "ARRAY" | "OBJECT";
-  csvDataFormatFn: TCSVFormatFnNames;
-}
-
-export type TGetBulkOperationDataEvent = {
+export interface IGetBulkOperationDataEvent {
   bucket: string;
   destinationKey: string;
   operationType: "mutation" | "query";
-} & (
-  | IGetBulkOperationDataEventALL
-  | IGetBulkOperationDataEventCSV
-  | IGetBulkOperationDataEventCSVandJSONL
-  | IGetBulkOperationDataEventJSON
-  | IGetBulkOperationDataEventJSONL
-  | IGetBulkOperationDataEventJSONandJSONL
-  | IGetBulkOperationDataEventJSONandCSV
-);
+  extension: ("JSON" | "JSONL" | "CSV")[];
+  jsonDataFormatFn?: TJSONFormatFnNames;
+  jsonType?: "ARRAY" | "OBJECT";
+  csvDataFormatFn?: TCSVFormatFnNames;
+}
