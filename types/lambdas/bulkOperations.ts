@@ -1,7 +1,7 @@
 import {
   TProductBulkMutationFns,
   TProductBulkQueryFns,
-} from "types/mugstech-shopify";
+} from "../mugstech-shopify";
 
 export interface IBulkOperationMutationEvent {
   bucket: string;
