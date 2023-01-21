@@ -3,6 +3,8 @@ export type TProductBulkMutationFns =
   | "bulkUpdateProductsImages"
   | "bulkAppendProductsImages"
   | "bulkUpdateProductsTags";
+
 export type TProductBulkQueryFns =
   | "getAllProductVariantIds"
-  | "getAllProductImages";
+  | "getAllProductImages"
+  | "getVariantsData";
