@@ -1,5 +1,7 @@
 export type TCSVFormatFnNames =
   | "formatCreatedProducts"
   | "formatProductImages"
-  | "formatAllProductVariantIds";
+  | "formatAllProductVariantIds"
+  | "formatProductVariantData";
+
 export type TJSONFormatFnNames = "formatVariantIdsFromBulkQuery";
